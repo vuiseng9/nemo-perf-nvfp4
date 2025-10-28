@@ -57,6 +57,7 @@ OOM for NVFP4, suspect due to larger memory footprint given block size of 16 as 
 
 -------------------
 ### Build: `docker build -t nemo-2509-nvfp4 .`
+or pre-built image: `docker pull vuiseng9:nemo-2509-nvfp4`
 
 ### Steps:
 1. **Pretrain llama3_8b**  
