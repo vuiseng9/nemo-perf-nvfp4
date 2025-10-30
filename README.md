@@ -70,13 +70,16 @@ or pre-built image: `docker pull vuiseng9:nemo-2509-nvfp4`
     python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP
 
     # pretrain.2. 8xB200, FP8 (delayed scaling)
-    python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe ds
+    python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe ds
 
     # pretrain.3. 8xB200, MXFP8
-    python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe mxfp8
+    python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe mxfp8
 
     # pretrain.4. 8xB200, NVFP4
-    python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe nvfp4
+    python -m scripts.performance.llm.pretrain_llama3_8b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe nvfp4
     ```
 
 1. **SFT llama3_8b**
@@ -88,16 +91,20 @@ or pre-built image: `docker pull vuiseng9:nemo-2509-nvfp4`
     # ----------------------------------------------------------------------------------
     # SFT llama3_8b Benchmarks
     # sft.1. 8xB200, BF16
-    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP --finetuning sft -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP \
+        --finetuning sft -hf $hftoken
 
     # sft.2. 8xB200, FP8 (delayed scaling) 
-    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe ds --finetuning sft -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe ds --finetuning sft -hf $hftoken
 
     # sft.3. 8xB200, MXFP8 
-    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe mxfp8 --finetuning sft -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe mxfp8 --finetuning sft -hf $hftoken
 
     # sft.4. 8xB200, NVFP4
-    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe nvfp4 --finetuning sft -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_8b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe nvfp4 --finetuning sft -hf $hftoken
     ```
 
 1. **LORA llama3_70b**
@@ -109,16 +116,20 @@ or pre-built image: `docker pull vuiseng9:nemo-2509-nvfp4`
     # ----------------------------------------------------------------------------------
     # LORA llama3_70b Benchmarks
     # lora.1. 8xB200, BF16
-    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP --finetuning lora -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP \
+        --finetuning lora -hf $hftoken
 
     # lora.2. 8xB200, FP8
-    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe ds --finetuning lora -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe ds --finetuning lora -hf $hftoken
 
     # lora.3. 8xB200, MXFP8
-    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe mxfp8 --finetuning lora -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe mxfp8 --finetuning lora -hf $hftoken
 
     # lora.4. 8xB200, NVFP4
-    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP --compute_dtype fp8 --fp8_recipe nvfp4 --finetuning lora -hf $hftoken
+    python -m scripts.performance.llm.finetune_llama3_70b -g b200 --max_steps $NSTEP \
+        --compute_dtype fp8 --fp8_recipe nvfp4 --finetuning lora -hf $hftoken
     ```
 
 ### Training Throughput (Tokens/second/gpu):
