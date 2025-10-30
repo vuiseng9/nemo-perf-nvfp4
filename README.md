@@ -30,7 +30,9 @@ Do check out the paper to learn about the key ingredients for NVFP4 convergence,
 |                         | FP8 (per-tensor) | 29,567   | 1.37×|
 |                         | MXFP8            | 28,432   | 1.32×|
 |                         | NVFP4            | 35,578   | 1.65×|
+
 NVFP4 is 1.25× higher than MXFP8 here.
+
 -------------------
 > Config: 8xB200, GBS=*8*, MBS=*1*, Seq.Len=*16384*, TP=1, PP=1, CP=1, VP=1, EP=1, GA=*1*
 
@@ -140,7 +142,9 @@ TPS/gpu = TPS/n_gpus
 L: sequence length; GBS: global batch size; n_gpus: number of gpus used
 
 e.g. given log:
-# mbs_128gbs/0 Training epoch 0, iteration 10/14 | lr: 1.649e-06 | global_batch_size: 128 | global_step: 10 | max_memory_reserved: 140129599488 | max_memory_allocated: 107693703168 | reduced_train_loss: 11.97 | train_step_timing in s: 3.684 | TFLOPS_per_GPU: 1.831e+03 | consumed_samples: 1408
+# mbs_128gbs/0 Training epoch 0, iteration 10/14 | lr: 1.649e-06 | global_batch_size: 128
+| global_step: 10 | max_memory_reserved: 140129599488 | max_memory_allocated: 107693703168
+| reduced_train_loss: 11.97 | train_step_timing in s: 3.684 | TFLOPS_per_GPU: 1.831e+03 | consumed_samples: 1408
 
 # TPS/gpu = (128*8192)/3.684/8 = 35578 tps/gpu
 ```
