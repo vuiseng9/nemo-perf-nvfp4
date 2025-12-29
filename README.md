@@ -12,7 +12,7 @@ The repository provides:
 
 * Reproducible steps and benchmarks of Llama3-8B pretraining, supervised fine-tuning and Llama3-70B LORA.
 
-*Key takeaway*: **NVFP4 pretraining of Llama3-8B, 8K length on 8xB200 achieves **1.65× speedup** over BF16, and is **1.25× faster** than MXFP8.** 
+**Key takeaway 📌: NVFP4 pretraining of Llama3-8B, 8K length on 8xB200 achieves **1.65× speedup** over BF16, and is **1.25× faster** than MXFP8.** 
 
 Main references: [Paper](https://arxiv.org/abs/2509.25149), [Blog](https://developer.nvidia.com/blog/nvfp4-trains-with-precision-of-16-bit-and-speed-and-efficiency-of-4-bit/), [PR](https://github.com/NVIDIA/TransformerEngine/pull/2177). Great work by NVIDIA team!
 
